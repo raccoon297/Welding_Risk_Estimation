@@ -1,0 +1,70 @@
+{
+  "inference_mode": "dnn_statistical_pseudo_label_anomaly",
+  "model": "DNN",
+  "feature_columns": [
+    "thickness_1_mm",
+    "thickness_2_mm",
+    "pressure_bar",
+    "current_ka",
+    "voltage_v",
+    "duration_ms"
+  ],
+  "config": {
+    "seed": 42,
+    "hidden": [
+      32,
+      16
+    ],
+    "max_epochs": 400,
+    "patience": 40,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "success_threshold": 0.2,
+    "defect_threshold": 0.8
+  },
+  "constant": [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "mean": [
+    0.7,
+    0.7,
+    2.741643178410795,
+    14.705043478260873,
+    2.7039880059970014,
+    71.72880059970015
+  ],
+  "scale": [
+    1.0,
+    1.0,
+    1.3839861703625564,
+    0.09875653994346319,
+    0.02340911494996326,
+    0.6297103644915385
+  ],
+  "fixed_values": [
+    0.7,
+    0.7,
+    2.34,
+    14.729999999999999,
+    2.702,
+    72.0
+  ],
+  "fit_rows": 6670,
+  "fit_labeled_rows": 6370,
+  "pseudo_support": {
+    "normal": 6336,
+    "anomaly": 34,
+    "excluded_boundary": 300
+  },
+  "best_epoch": 400,
+  "best_validation_loss": 0.001246666070073843,
+  "training_label_provenance": "statistical_pseudo_labels",
+  "labels_are_inspection_truth": false,
+  "score_is_true_defect_probability": false,
+  "checkpoint_sha256": "b36cda457874f2649dc88d3870ebd41b1e285bdea9f59f4242eefd771cde7c5b"
+}

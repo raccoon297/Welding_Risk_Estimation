@@ -1,0 +1,55 @@
+{
+  "inference_mode": "statistical_pseudo_label_anomaly",
+  "model": "Logistic",
+  "feature_columns": [
+    "thickness_1_mm",
+    "thickness_2_mm",
+    "pressure_bar",
+    "current_ka",
+    "voltage_v",
+    "duration_ms"
+  ],
+  "active_features": [
+    "pressure_bar",
+    "current_ka",
+    "voltage_v",
+    "duration_ms"
+  ],
+  "fit_rows": 6670,
+  "center": [
+    0.7,
+    0.7,
+    2.34,
+    14.729999999999999,
+    2.702,
+    72.0
+  ],
+  "iqr_or_std_scale": [
+    1.0,
+    1.0,
+    0.06000000000000005,
+    0.15000000000000213,
+    0.007000000000000561,
+    1.0
+  ],
+  "pseudo_label_quantiles": [
+    0.95,
+    0.995
+  ],
+  "distance_squared_pseudo_cutoffs": [
+    1511.6252573696113,
+    3082.4078242630244
+  ],
+  "decision_thresholds": [
+    0.2,
+    0.8
+  ],
+  "pseudo_support": {
+    "normal": 6336,
+    "anomaly": 34,
+    "excluded_boundary": 300
+  },
+  "labels_are_inspection_truth": false,
+  "score_is_true_defect_probability": false,
+  "checkpoint_sha256": "3b70da65d507a1e6a4e4d418dc5585358f4ef22e9d8a6580c4b1d4b0e252e2fe"
+}

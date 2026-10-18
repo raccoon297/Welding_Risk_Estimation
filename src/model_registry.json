@@ -1,0 +1,113 @@
+{
+  "default_model": "DNN_GAMI2",
+  "selection_reason": "사용자 지정 최종 모델 DNN_GAMI2, seed 17",
+  "final_seed": 17,
+  "actual_quality_accuracy_verified": false,
+  "models": {
+    "Baseline": {
+      "label": "Baseline",
+      "loader": null,
+      "selected_seed": null,
+      "model_folder": "results/models/Baseline/selected",
+      "public_inputs": [
+        "pressure_bar",
+        "current_ka",
+        "voltage_v",
+        "duration_ms"
+      ],
+      "learned_input_count": 4,
+      "output_labels": [
+        "성공",
+        "실패",
+        "모르겠음"
+      ],
+      "selected_predictions": "results/tables/experiments/Baseline/selected_predictions.csv",
+      "is_final": false,
+      "description": "학습 없이 모든 용접을 성공으로 추정"
+    },
+    "Logistic": {
+      "label": "Logistic",
+      "loader": "LogisticAnomaly",
+      "selected_seed": null,
+      "model_folder": "results/models/Logistic/selected",
+      "public_inputs": [
+        "pressure_bar",
+        "current_ka",
+        "voltage_v",
+        "duration_ms"
+      ],
+      "learned_input_count": 4,
+      "output_labels": [
+        "성공",
+        "실패",
+        "모르겠음"
+      ],
+      "selected_predictions": "results/tables/experiments/Logistic/selected_predictions.csv",
+      "is_final": false,
+      "description": "센서 거리 기반 임시 라벨을 이용한 로지스틱 회귀"
+    },
+    "DNN": {
+      "label": "DNN",
+      "loader": "DNNAnomaly",
+      "selected_seed": 42,
+      "model_folder": "results/models/DNN/selected",
+      "public_inputs": [
+        "pressure_bar",
+        "current_ka",
+        "voltage_v",
+        "duration_ms"
+      ],
+      "learned_input_count": 4,
+      "output_labels": [
+        "성공",
+        "실패",
+        "모르겠음"
+      ],
+      "selected_predictions": "results/tables/experiments/DNN/selected_predictions.csv",
+      "is_final": false,
+      "description": "네 센서와 임시 라벨을 이용한 DNN"
+    },
+    "DNN_GAMI": {
+      "label": "DNN_GAMI",
+      "loader": "DNNGAMI",
+      "selected_seed": 42,
+      "model_folder": "results/models/DNN_GAMI/selected",
+      "public_inputs": [
+        "pressure_bar",
+        "current_ka",
+        "voltage_v",
+        "duration_ms"
+      ],
+      "learned_input_count": 4,
+      "output_labels": [
+        "성공",
+        "실패",
+        "모르겠음"
+      ],
+      "selected_predictions": "results/tables/experiments/DNN_GAMI/selected_predictions.csv",
+      "is_final": false,
+      "description": "네 센서의 병렬 DNN·GAMI 구조와 날짜별 집계 약지도 학습"
+    },
+    "DNN_GAMI2": {
+      "label": "DNN_GAMI2",
+      "loader": "DNNGAMI2",
+      "selected_seed": 17,
+      "model_folder": "results/models/DNN_GAMI2/selected",
+      "public_inputs": [
+        "pressure_bar",
+        "current_ka",
+        "voltage_v",
+        "duration_ms"
+      ],
+      "learned_input_count": 5,
+      "output_labels": [
+        "성공",
+        "실패",
+        "모르겠음"
+      ],
+      "selected_predictions": "results/tables/experiments/DNN_GAMI2/selected_predictions.csv",
+      "is_final": true,
+      "description": "DNN_GAMI 학습 방식에 저항 지표 V/I를 추가한 최종 모델"
+    }
+  }
+}
